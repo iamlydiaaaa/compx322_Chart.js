@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="javascript/main.js"></script>
+</head>
+
+<body onload="getDataAjax()">
+    <header>
+        <h1 id="logo">Commodity Prices</h1>
+    </header>
+    <main id="dashboard">
+        <div class="left">
+            <div class="graph" id="graph">
+                <canvas id="myChart">
+                    <!--   Graph area    -->
+                </canvas>
+            </div>
+            <p class="clear">
+                <button type="button" id="clear" onclick="clearGraph()">clear</button>
+            </p>
+        </div>
+        <div class="right">
+            <div class="dropdown">
+                <button class="drop_label">select</button>
+                <ul id="drop">
+                    <!--   Drop-down-list area    -->
+                </ul>
+            </div>
+            <div class="lists">
+                <!--   Widget list area    -->
+            </div>
+        </div>
+    </main>
+</body>
+
+<script>
+    // Drop-down list operating function
+    const label = document.querySelector('.drop_label');
+    const options = document.querySelectorAll('.items');
+
+
+    const handleSelect = function(item) {
+        label.innerHTML = item.textContent;
+        label.parentNode.classList.remove('active');
+    }
+
+
+    options.forEach(function(option) {
+        option.addEventListener('click', function() {
+            handleSelect(option)
+        })
+    })
+
+    // When click the label, the list toggles to open&close
+    label.addEventListener('click', function() {
+        if (label.parentNode.classList.contains('active')) {
+            label.parentNode.classList.remove('active');
+        } else {
+            label.parentNode.classList.add('active');
+        }
+    });
+
+</script>
+
+</html>

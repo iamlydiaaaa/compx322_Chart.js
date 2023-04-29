@@ -1,0 +1,177 @@
+@charset "utf-8";
+
+body, body * {list-style: none; margin: 0;padding: 0; box-sizing: border-box; border-collapse: collapse; font-family: "Arial", "sans-serif"}
+button{
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/*    header    */
+header{
+    background-color: #ffeaea;
+    margin-bottom: 50px;
+}
+header>#logo{
+    line-height: 150px;
+    font-size: 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/*   contents     */
+main{width: 1600px; height: 800px; margin: 0 auto; color: #333; font-size: 16px;  clear: both; 
+}
+
+/* ------------ left ------------ */
+.left{
+    width: 60%; float: left;
+}
+.graph{
+    width: 100%; height: 500px; 
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+#clear{
+    width: 100%; height: 50px;
+    background-color: #aaa;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ------------ right ------------ */
+.right{
+    width: 35%; float: left; margin-left: 5%;
+}
+
+/* drop-down list */
+.dropdown{
+    position: relative;
+    width: 100%; height: 70px;
+    margin-bottom: 100px;
+}
+.dropdown::after{
+    content: ""; display: block;
+    width: 100%; height: 1px;
+    border-bottom: 1px solid #aaa;
+    margin: 15px 0;
+}
+.drop_label{
+    width: 100%; height: 50px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    position: relative;
+    font-size: 20px; font-weight: bold;
+    
+}
+
+.drop_label::before,.drop_label::after{
+    content: ""; display: block;
+    width: 50px; height: 100%;
+    position: absolute; right: 0;top: 0;
+}
+.drop_label::after{
+    background: url(../img/arrow-down.png) center center no-repeat;
+    transition: all 0.3s;
+}
+.drop_label::before{
+    background-color: #ffe3e3;
+    border-left: 1px solid #aaa;
+}
+#drop{
+    width: 100%; height: 0;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    position: relative;
+    top: -80px;
+    display: none;
+    transition: all 0.3s;
+}
+.dropdown.active #drop {
+    top: 0;
+    height: 80px;
+    display: block;
+}
+.dropdown.active .drop_label::after{
+    transform: rotate(180deg);
+}
+
+#drop>li{
+    width: 25%; height: 39px; padding: 10px; float: left;
+    text-align: center;
+    cursor: pointer;
+}
+#drop>li{
+    border-right: 1px dashed #aaa;
+}
+#drop>li:nth-child(4n){
+    border-right: 0;
+}
+#drop>li:hover{
+    background-color: #eee;
+}
+
+
+
+/* ----lists---- */
+.lists{
+    width: 100%; height: 500px;
+    padding: 10px;
+/*    background-color: #ccc;*/
+}
+
+/* content box*/
+.content{
+    width: 100%; height: 100px; margin-bottom: 20px;
+    padding: 20px; position: relative;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transition: all 0.2s;
+}
+.content:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.content>h3{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.content>h5{
+    background-color: #fff;
+    width: 70%;
+}
+.content button{
+    position: absolute;
+}
+.btnShow, .btnAdd{
+    width: 80px; height: 30px;
+    right: 20px;
+    background: none;
+    border: 1px solid #eaeaea;
+}
+.btnShow{
+    bottom: 50px; margin-bottom: 5px;
+}
+.btnAdd{
+    bottom: 20px;
+}
+.btnDelete{
+    width: 30px;height: 30px;
+    right: -15px;top: -15px;
+    border: 1px solid #ccc;    
+    background-color: #fff;
+    border-radius: 100%;
+}
+
+.btnShow:hover, .btnAdd:hover{
+    background-color: #eee;
+    border-radius: 5px;
+}
+.btnDelete:hover{
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
