@@ -1,9 +1,6 @@
 # Chart.js
 [Waikato Univ. COMPX322 Assignment] Chart.js, API(alphavantage) project
 
-
-# Shop_Project_SpringBoot
-
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=FCC624&height=300&section=header&text=Chart.js&fontSize=60" />
