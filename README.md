@@ -24,6 +24,8 @@
 
   <br>
 <br><br><hr><br>
+
+<img src="chart.png"/>
   
 </div>
 
